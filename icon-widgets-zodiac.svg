@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+    <g fill="none" fill-rule="evenodd">
+        <g stroke="#FFF">
+            <g>
+                <g>
+                    <g>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width=".75" d="M40.206 48.53L28.831 48.53 0.7 48.53 14.766 24.486 28.831 0.442 42.897 24.486 48.464 34.005" transform="translate(-948 -1393) translate(820 1378) translate(128 15.84) translate(0 6.5)"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width=".75" d="M28.831 0.432L28.831 48.53 16.111 22.339" transform="translate(-948 -1393) translate(820 1378) translate(128 15.84) translate(0 6.5)"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width=".75" d="M20.005 15.464L28.831 48.53 8.619 35.073" transform="translate(-948 -1393) translate(820 1378) translate(128 15.84) translate(0 6.5)"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width=".75" d="M12.217 28.706L28.831 48.53 5.556 40.987 5.184 40.857" transform="translate(-948 -1393) translate(820 1378) translate(128 15.84) translate(0 6.5)"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width=".75" d="M24.216 8.342L28.831 48.53 1.98 46.339M28.82 48.271L41.475 22.198M37.592 15.411L28.809 48.271 47.513 35.828" transform="translate(-948 -1393) translate(820 1378) translate(128 15.84) translate(0 6.5)"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width=".75" d="M45.259 28.652L28.809 48.271 42.984 43.685" transform="translate(-948 -1393) translate(820 1378) translate(128 15.84) translate(0 6.5)"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width=".75" d="M33.414 8.277L28.809 48.271 40.841 47.289" transform="translate(-948 -1393) translate(820 1378) translate(128 15.84) translate(0 6.5)"/>
+                        <path d="M53.091 27.432L61.48 41.775 69.869 56.117 53.091 56.117 36.302 56.117 44.691 41.775z" transform="translate(-948 -1393) translate(820 1378) translate(128 15.84) translate(0 6.5)"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
