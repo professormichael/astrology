@@ -1,0 +1,92 @@
+/* Reset some default styling */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    position: relative;
+    padding: 0;
+    list-style: none;
+}
+
+/* Set default text color and font */
+body {
+    font-family: Arial, sans-serif;
+    color: black;
+}
+
+/* Background styles */
+.body1 {
+    background-image: url("WGkW.gif");
+    background-repeat: no-repeat;
+    background-size: 100% 1000px;
+}
+
+/* Navigation menu styles */
+ul {
+    background-color: #f1f1f1;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    background-color: white;
+    margin-right: 10px;
+}
+
+li a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Page title styles */
+.a2 {
+    background-color: black;
+    color: white;
+    padding-left: 1400px;
+    text-align: left;
+    text-underline-color: blue;
+}
+
+/* Paragraph styles */
+.Front_Page1,.Front_Page2,.Front_Page3,.Front_Page4,.Front_Page5 {
+    font-size: xx-large;
+    color: navajowhite;
+    margin-left: 600px;
+    position:absolute;
+
+    margin-top: 30px;
+    animation: slideInLeft2 2s ease-in 2s alternate 1;
+    transform: translateY(80px);
+}
+.Front_Page1{
+    top: 300px;
+}
+.Front_Page2{
+    top: 350px;
+}
+.Front_Page3{
+    top: 400px;
+}
+.Front_Page4{
+    top: 450px;
+}
+.Front_Page5{
+    top: 500px;
+}
+
+/* Audio control styles */
+audio {
+
+    display: block;
+    margin-top: 500px;
+}
+
+/* Keyframes animation */
+@keyframes slideInLeft2 {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(80px);
+    }
+}
