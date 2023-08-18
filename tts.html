@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toggle Play/Pause Button</title>
+    <style>
+        /* Style for the play button */
+        #play-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Change background color on hover */
+        #play-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <textarea id="text-to-speak" placeholder="Enter text to speak"></textarea>
+    <button id="play-button">Play Text</button>
+
+    <script>
+        const textToSpeak = document.getElementById("text-to-speak");
+        const playButton = document.getElementById("play-button");
+        const synthesis = window.speechSynthesis;
+        let isPlaying = false;
+        let utterance;
+
+        playButton.addEventListener("click", () => {
+            const text = textToSpeak.value;
+            if (text.trim() !== "") {
+                if (!isPlaying) {
+                    utterance = new SpeechSynthesisUtterance(text);
+                    synthesis.speak(utterance);
+                    playButton.textContent = "Pause";
+                } else {
+                    synthesis.pause();
+                    playButton.textContent = "Play Text";
+                }
+                isPlaying = !isPlaying;
+            }
+        });
+    </script>
+</body>
+</html>

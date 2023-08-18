@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Speech Synthesis Download</title>
+</head>
+<body>
+    <textarea id="text-to-speak" placeholder="Enter text to speak"></textarea>
+    <button id="generate-link">Generate Link</button>
+    <a id="speech-link" href="#">Play Speech</a>
+    <a id="download-link" href="#" download="speech.mp3" style="display: none;">Download Speech</a>
+
+    <script>
+        const textToSpeak = document.getElementById("text-to-speak");
+        const generateLinkButton = document.getElementById("generate-link");
+        const speechLink = document.getElementById("speech-link");
+        const downloadLink = document.getElementById("download-link");
+
+        generateLinkButton.addEventListener("click", () => {
+            const message = encodeURIComponent(textToSpeak.value);
+            const ttsUrl = `tts.html?message=${message}`;
+            speechLink.href = ttsUrl;
+            speechLink.textContent = "Play Speech";
+        });
+
+        // Listen for the 'click' event on the speech link
+        speechLink.addEventListener("click", () => {
+            // Show the download link when the speech is played
+            downloadLink.style.display = "inline";
+        });
+    </script>
+</body>
+</html>
+<script>
+(function() {
+  var ws = new WebSocket('ws://' + window.location.host + 
+             '/jb-server-page?reloadMode=RELOAD_ON_SAVE&'+
+             'referrer=' + encodeURIComponent(window.location.pathname));
+  ws.onmessage = function (msg) {
+      if (msg.data === 'reload') {
+          window.location.reload();
+      }
+      if (msg.data.startsWith('update-css ')) {
+          var messageId = msg.data.substring(11);
+          var links = document.getElementsByTagName('link');
+          for (var i = 0; i < links.length; i++) {
+              var link = links[i];
+              if (link.rel !== 'stylesheet') continue;
+              var clonedLink = link.cloneNode(true);
+              var newHref = link.href.replace(/(&|\?)jbUpdateLinksId=\d+/, "$1jbUpdateLinksId=" + messageId);
+              if (newHref !== link.href) {
+                clonedLink.href = newHref;
+              }
+              else {
+                var indexOfQuest = newHref.indexOf('?');
+                if (indexOfQuest >= 0) {
+                  // to support ?foo#hash 
+                  clonedLink.href = newHref.substring(0, indexOfQuest + 1) + 'jbUpdateLinksId=' + messageId + '&' + 
+                                    newHref.substring(indexOfQuest + 1);
+                }
+                else {
+                  clonedLink.href += '?' + 'jbUpdateLinksId=' + messageId;
+                }
+              }
+              link.replaceWith(clonedLink);
+          }
+      }
+  };
+})();
+</script>
