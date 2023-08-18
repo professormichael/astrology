@@ -428,7 +428,7 @@ top: 20px;
     </h2>
     <p style="position: absolute; left: 600px; top: 300px; font-size:27px;color: white;outline-color: black">Know Who Your Angel Is Now By Clicking The Button Below</p>
     <img style="position: absolute; width: 300px; top: 200px; left: 220px" src="1692360072263-removebg-preview.png" class="th-image">
-    <button class="button-three second-button" >Check The Name Of Your Angel</button>
+    <button id="three" class="button-three second-button thrid" >Check The Name Of Your Angel</button>
 </div>
 <div style="display: flex; position: relative; left: 0; right: 0; border: solid 3px #030117; top: 1300px" ></div>
 <div class="fth-div" style="position: relative">
@@ -437,13 +437,19 @@ top: 20px;
     </h2>
     <img style="position: absolute; width: 300px; top: 200px; left: 220px" src="1692360011183_2-removebg-preview.png" class="th-image">
     <p style="position: absolute; left: 500px; top: 300px; font-size:24px;color: white;outline-color: black">Calculate Your MOON Sign By Clicking The Button Below,<br/> What Is A Moon Sign?<br/> A Moon Sign Is A Reading Of The Phase Of The Moon Depending On When You Are Born Read More About This By Clicking The Button</p>
-    <button class="button-three second-button" >Know Your Moon Sign</button>
+    <button id="button-three" class="button-three second-button" >Know Your Moon Sign</button>
 </div>
 <script>
     const second_button = document.getElementById('second-button');
     second_button.addEventListener('click', function (){
         window.location.href = 'Horoscope New Line.html'
 
+    })
+    document.getElementById('button-three').addEventListener('click', function (){
+        window.location.href = 'moon-sign.html'
+    })
+    document.getElementById('three').addEventListener('click', function (){
+        window.location.href = 'angelic-path-details.html'
     })
         const swipeContainer = document.querySelector('.swipe-container');
     const swipeContent = document.querySelector('.swipe-content');
