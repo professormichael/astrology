@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fortune Cookies</title>
+  <style>
+    body{
+      background-color: RGB(0,0,0);
+
+    }
+    div{
+        top: 300px;
+        display: flex;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        right: 0;
+        left: 0;
+        position: relative;
+        align-content: center;
+    }
+    .img11{
+      transition: ease-in 300s ;
+        position: absolute;
+    }
+    .img11:hover{
+        opacity: 0.6;
+        transform: scale(1.1);
+    }
+
+    div p{
+        top: 40px;
+        color: black;
+
+        position: absolute;
+    }
+    button{
+        width: 300px;
+        height: 80px;
+        right: 300px;
+        font-size: 19px;
+        font-family: Roboto, Arial, sans-serif;
+        font-weight: bold;
+        position: absolute;
+        top: 300px;
+        transition: opacity 1.5s, all 1.5s
+    ;
+
+    }
+    button:hover{
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+<div style="color: white">
+    <img class="img11" onclick="computerGuess1()"><p ></p>
+<button onclick="computerGuess1()">Tap To Break Your Cookie</button>
+</div>
+
+
+<script>
+  document.querySelector('.img11').src ="screen.png";
+
+  let result= {
+      'result':''
+  }
+
+
+  console.log(result.result)
+
+  function computerGuess1(){
+      if(document.querySelector('.img11').src === ('http://localhost:63342/untitled/web/public/templates/screen.png')){
+        console.log(true)
+        console.log(document.querySelector('.img11').src)
+        document.querySelector('.img11').src = "screen1.png";
+        document.querySelector('p').innerHTML = result.result;
+
+    }
+    else if(document.querySelector('.img11').src ===("http://localhost:63342/untitled/web/public/templates/screen1.png")){
+        console.log(false)
+        console.log(document.querySelector('.img11').src);
+        document.querySelector('p').innerText = '';
+        document.querySelector('.img11').src= "screen.png"}
+    let computerGuess = Math.floor(Math.random()*10);
+    if(computerGuess>=0 && computerGuess<=2){
+        result.result = 'You need to be careful of who you move closer to.';
+    }
+    if(computerGuess>2 && computerGuess<=4){
+        result.result = 'More Blessing Is Coming You Way';
+    }
+    if(computerGuess>4 && computerGuess<=6){
+        result.result = 'You Have Some Close Friend, Love Them'
+    }
+    if(computerGuess>6 && computerGuess<=8){
+        result.result = 'Your Job is going to better'
+    }
+    if(computerGuess>8 && computerGuess<=10){
+        result.result = 'You will soon gain a new Job'
+    }
+
+  }
+
+</script>
+</body>
+</html>
