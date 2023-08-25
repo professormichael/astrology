@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tarot Card Guessing Machine</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .card-container{
+            display: grid;
+            width: 100%;
+            column-gap: 10px;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+
+
+        .card {
+
+            border: solid 3px black;
+            width: 100%;
+            height: 300px;
+            background-color: #854111;
+            display: inline-block;
+
+            font-size: 16px;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.5s, background-color 0.5s;
+        }
+
+        .picked {
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+<div class="card-container">
+    <div class="card" onclick="pickCard(this)">Pick a Card</div>
+    <div class="card" onclick="pickCard(this)">Pick a Card</div>
+    <div class="card" onclick="pickCard(this)">Pick a Card</div>
+    <div class="card" onclick="pickCard(this)">Pick a Card</div>
+    <div class="card" onclick="pickCard(this)">Pick a Card</div>
+    <div class="card" onclick="pickCard(this)">Pick a Card</div>
+    <div class="card" onclick="pickCard(this)">Pick a Card</div>
+    <div class="card" onclick="pickCard(this)">Pick a Card</div>
+    <div class="card" onclick="pickCard(this)">Pick a Card</div>
+    <div class="card" onclick="pickCard(this)">Pick a Card</div>
+
+    <div class="card" onclick="pickCard(this)">Pick a Card</div>
+    <div class="card" onclick="pickCard(this)">Pick a Card</div>
+    <div class="card" onclick="pickCard(this)">Pick a Card</div>
+    <div class="card" onclick="pickCard(this)">Pick a Card</div>
+    <div class="card" onclick="pickCard(this)">Pick a Card</div>
+    <div class="card" onclick="pickCard(this)">Pick a Card</div>
+    <div class="card" onclick="pickCard(this)">Pick a Card</div>
+    <div class="card" onclick="pickCard(this)">Pick a Card</div>
+    <div class="card" onclick="pickCard(this)">Pick a Card</div>
+    <div class="card" onclick="pickCard(this)">Pick a Card</div>
+
+</div>
+
+<script>
+    let computer_guess = Math.floor(Math.random()*40) ;
+
+
+    function pick() {
+        let image= {
+            'url':'',
+            'name':'',
+            'sign':'',
+            'positive_meaning' :'',
+            'negative_meaning':''
+
+
+    }
+        if (computer_guess > 0 && computer_guess <= 2) {
+            image.url = '1692915357464.jpg'
+            image.name = 'The Lovers'
+            image.sign = 'Yes'
+            image.positive_meaning='<h1>Yes:</h1> The Lovers embody deep connections and choices from the heart. In a "Yes" interpretation, this card affirms that your heart\'s desires are in alignment with your chosen path. Trust your feelings and make decisions that resonate with love and harmony. Whether in personal relationships or professional matters, following your heart will lead you to success.\n' +
+                ''
+
+        }
+        if (computer_guess > 2 && computer_guess <= 4) {
+            image.url = '1692915498077.jpg'
+            image.name = 'The Lovers'
+            image.sign = 'No'
+            image.negative_meaning = '<h1>No:</h1> In a "No" context, The Lovers encourage cautious decision-making. Avoid making choices solely driven by desire, as they might lead to unforeseen consequences. Strive for balance between emotions and practicality to ensure long-term benefits.'
+
+        }
+        if (computer_guess > 4 && computer_guess <=6) {
+            image.url = '1692915363477.jpg'
+            image.name = 'The Hermit'
+            image.sign = 'Yes'
+            image.positive_meaning='Yes: The Hermit signifies introspection and inner wisdom. In a "Yes" context, this card advises that taking time for self-reflection will lead to success. Trust your inner guidance and seek answers from within. Solitude can provide the clarity necessary to make informed decisions.\n'
+
+        }
+        if (computer_guess > 10 && computer_guess <=12) {
+            image.url = '1692915367270.jpg'
+            image.name = 'The Hermit'
+            image.sign = 'No'
+                image.negative_meaning='No: In a "No" scenario, The Hermit cautions against isolation. Seeking advice and perspectives from others can provide valuable insights. Balance introspection with connecting to the world around you to ensure a well-rounded perspective.'
+        }
+        if (computer_guess > 12 && computer_guess <=14) {
+            image.url = '1692915374660.jpg'
+            image.name = 'Strength'
+            image.sign = 'Yes'
+            image.positive_meaning = 'Yes: Strength embodies courage and resilience. When appearing in a "Yes" reading, this card assures that your patient and gentle approach will lead to success. Overcoming challenges requires harnessing your inner strength while maintaining a calm demeanor. Embrace obstacles with grace and determination, as they are stepping stones to victory.'
+        }
+        if (computer_guess > 14 && computer_guess <=16) {
+            image.url = '1692915370574.jpg'
+            image.name = 'Strength'
+            image.sign = 'No'
+            image.negative_meaning = 'No: In a "No" context, Strength advises against approaching challenges with aggression. Patience and gentleness are essential in overcoming adversity. Avoid letting anger or impulsiveness dictate your actions. Take the time to gather your inner strength before proceeding.'
+        }
+        if (computer_guess > 16 && computer_guess <=18) {
+            image.url = '1692915379111.jpg'
+            image.name = 'High Priestess'
+            image.sign = 'Yes'
+            image.positive_meaning = 'Yes: The High Priestess is a symbol of intuition and inner wisdom. In a "Yes" interpretation, trust your instincts and delve into your subconscious; this will guide you towards success. This is a moment to listen to your inner voice, pay heed to dreams, and recognize hidden insights. Secrets are your allies, and by tapping into your intuitive nature, you\'ll find answers that lead you down the right path.'
+        }
+        if (computer_guess > 18 && computer_guess <= 20) {
+            image.url = '1692915433068.jpg';
+            image.name = 'High Priestess';
+            image.sign = 'No';
+            image.negative_meaning = 'No: In a "No" context, The High Priestess underscores the importance of acknowledging your intuition. Ignoring your inner wisdom or sidestepping deeper truths could hinder progress. Be open to the mystical and intuitive aspects of life, for they might hold essential information that rationality can\'t provide.'
+
+        }
+        if (computer_guess > 20 && computer_guess <= 22) {
+            image.url = '1692915428900.jpg'
+            image.name = 'The Sun'
+            image.sign = 'Yes'
+            image.positive_meaning = 'No: In a "No" interpretation, The Hierophant warns against blind adherence to tradition. Be open to innovative approaches and new perspectives, as rigidity might hinder growth. Strive for a balance between honoring the past and embracing new ways of thinking.'
+
+        }
+        if (computer_guess >22 && computer_guess <=24) {
+            image.url = '1692915382283.jpg'
+            image.name = 'The Sun'
+            image.sign = 'No'
+            image.negative_meaning = 'No: In a "No" scenario, The Sun acknowledges temporary challenges that might be casting a shadow on your path. However, remember that clouds disperse, and brighter days are ahead. Maintain an optimistic perspective and focus on the valuable lessons you can extract from difficulties.\n'
+
+        }
+        if (computer_guess >24 && computer_guess <=26) {
+            image.url = '1692915423898.jpg'
+            image.name = 'The Hierophant'
+            image.sign = 'Yes'
+            image.positive_meaning = 'Yes: The Hierophant represents tradition and spiritual guidance. In a "Yes" reading, this card indicates that seeking advice from established sources or mentors will guide you to success. Your dedication to learning from wisdom accumulated over time will bring positive outcomes. Trust in the structured approach and knowledge of others.'
+
+        }
+        if (computer_guess > 26 && computer_guess <=28) {
+            image.url = '1692915385504.jpg'
+            image.name = 'The Hierophant'
+            image.sign = 'No'
+            image.negative_meaning = 'No: In a "No" interpretation, The Hierophant warns against blind adherence to tradition. Be open to innovative approaches and new perspectives, as rigidity might hinder growth. Strive for a balance between honoring the past and embracing new ways of thinking.'
+        }
+        if (computer_guess >28 && computer_guess <=30) {
+            image.url = '1692915389328.jpg'
+            image.name = 'Moon'
+            image.sign = 'Yes'
+            image.positive_meaning = ''
+        }
+        if (computer_guess >30 && computer_guess <=32) {
+            image.url = '1692915481283.jpg'
+            image.name = 'Moon'
+            image.sign = 'No'
+            image.negative_meaning = ''
+        }
+        if (computer_guess > 32 && computer_guess <=34) {
+            image.url = '1692915395492.jpg'
+            image.name = 'The Emperor'
+            image.sign = 'Yes'
+            image.positive_meaning = 'Yes: The Emperor stands as the embodiment of authority and leadership. In a "Yes" context, this card suggests that your disciplined and organized approach will pave the way for success. Your ability to take charge and make decisions with confidence will establish a solid foundation for your endeavors. It\'s a time to assert your influence and demonstrate your capabilities as a leader, knowing that your determination will yield positive results.'
+        }
+        if (computer_guess > 34 && computer_guess <=36) {
+            image.url = '1692915490347.jpg'
+            image.name = 'The Emperor'
+            image.sign = 'No'
+            image.negative_meaning = 'No: In a "No" scenario, The Emperor cautions against a rigid and controlling attitude. Striking a balance between assertiveness and adaptability is crucial. Being overly domineering might lead to challenges or resistance from others. Reflect on whether your actions are isolating you or if your approach is overly authoritative. Flexibility might be key to overcoming obstacles.'
+        }
+        if (computer_guess > 36 && computer_guess <= 38) {
+            image.url = '1692915437244.jpg'
+            image.name = 'The Chariot'
+            image.sign = 'Yes'
+            image.positive_meaning = 'Yes: The Chariot symbolizes triumph and determination. When appearing in a "Yes" reading, it suggests that unwavering willpower and focused effort will drive you to victory. Embrace challenges with confidence, knowing that your determination and control will overcome obstacles. This card encourages you to steer your life\'s chariot towards success by harnessing your inner strength.'
+        }
+        if (computer_guess > 38 && computer_guess <= 40) {
+            image.url = '1692915486524.jpg'
+            image.name = 'The Chariot'
+            image.sign = 'No'
+            image.negative_meaning='No: In a "No" interpretation, The Chariot advises against rushing ahead without a clear direction. Impulsiveness might lead to setbacks. Take a step back, assess your course of action, and ensure that your approach is well-considered and focused. Balancing confidence with careful planning will lead to better outcomes.\n'
+        }
+        return image
+    }
+
+    function pickCard(card) {
+        const cards = document.querySelectorAll('.card');
+
+        // Disable other cards once one card is picked
+        for (const otherCard of cards) {
+            if (otherCard !== card) {
+                otherCard.style.visibility = 'hidden';
+            }
+        }
+
+        card.classList.add('picked');
+        card.style.backgroundColor = 'inherit'
+        card.style.border = 'none'
+        let nump = '';
+
+        if(pick().sign ==='No'){
+            nump = pick().negative_meaning;
+            console.log(nump)
+        }
+        if(pick().sign ==='Yes'){
+            nump = pick().positive_meaning;
+        }
+
+        document.body.innerHTML = `<div style="display: grid; grid-template-columns: 420px 1fr"><img src="${pick().url}" style="height: 700px">  <div style="display: inline-block; vertical-align: top; width: 100%"><h1 >${pick().name}</h1>  <h2 >${pick().sign}</h2> <h2 style="width: 100%">${nump}</h2></div></div>`
+
+
+
+    }
+</script>
+</body>
+</html>
