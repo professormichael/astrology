@@ -71,15 +71,18 @@
   console.log(result.result)
 
   function computerGuess1(){
-      if(document.querySelector('.img11').src === ('http://localhost:63342/untitled/web/public/templates/screen.png')){
+      console.log(document.querySelector('.img11').src )
+      if(document.querySelector('.img11').src === ('screen.png')){
         console.log(true)
         console.log(document.querySelector('.img11').src)
         document.querySelector('.img11').src = "screen1.png";
+        console.log(document.querySelector('.img11').src )
         document.querySelector('p').innerHTML = result.result;
 
     }
-    else if(document.querySelector('.img11').src ===("http://localhost:63342/untitled/web/public/templates/screen1.png")){
+    else if(document.querySelector('.img11').src ===("screen1.png")){
         console.log(false)
+
         console.log(document.querySelector('.img11').src);
         document.querySelector('p').innerText = '';
         document.querySelector('.img11').src= "screen.png"}
