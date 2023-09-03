@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Reader</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        #pdfContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        canvas {
+            margin: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div id="pdfContainer"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+    <script>
+        const pdfUrl = JSON.parse(localStorage.getItem('pdf'));
+
+        function loadPDF() {
+            const container = document.getElementById('pdfContainer');
+
+            pdfjsLib.getDocument(pdfUrl).promise.then(pdfDoc => {
+                const numPages = pdfDoc.numPages;
+
+                for (let pageNum = 1; pageNum <= numPages; pageNum++) {
+                    const canvas = document.createElement('canvas');
+                    container.appendChild(canvas);
+
+                    pdfDoc.getPage(pageNum).then(page => {
+                        const viewport = page.getViewport({ scale: 1.0 });
+                        const canvasContext = canvas.getContext('2d');
+                        canvas.height = viewport.height;
+                        canvas.width = viewport.width;
+
+                        const renderContext = {
+                            canvasContext,
+                            viewport,
+                        };
+
+                        // Render the page
+                        page.render(renderContext).promise.then(() => {
+                            // Customize text styling (adjust as needed)
+                            const textLayer = canvas.parentElement.querySelector('.textLayer');
+                            if (textLayer) {
+                                textLayer.style.fontFamily = 'Arial, sans-serif';
+                                textLayer.style.fontSize = '23px';
+                                textLayer.style.color = '333';
+                                textLayer.style.backgroundColor = 'transparent';
+                            }
+                        });
+                    });
+                }
+            }).catch(error => {
+                console.error('Error loading PDF:', error);
+            });
+        }
+
+        window.addEventListener('load', loadPDF);
+    </script>
+</body>
+</html>
