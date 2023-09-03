@@ -199,13 +199,13 @@
         a.click()
     })
     mybutton1.addEventListener('click', function (){
-        localStorage.setItem('pdf', JSON.stringify('documents/pdf1.pdf' || 'pdf1.pdf'))
+        localStorage.setItem('pdf', JSON.stringify('pdf1.pdf'))
         window.location.href = 'data_reading.html'
     })
     mydownload1.addEventListener('click', function (){
         const a = document.createElement('a');
-        a.href = 'documents/pdf1.pdf' || 'pdf1.pdf';
-        a.download = 'documents/pdf1.pdf' || 'pdf1.pdf'
+        a.href = 'pdf1.pdf';
+        a.download =  'pdf1.pdf'
         a.click()
     })
     mybutton2.addEventListener('click', function (){
