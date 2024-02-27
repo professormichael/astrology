@@ -1,0 +1,298 @@
+ body {
+            background-color: #040d12;
+            margin: 0;
+        }
+
+        .p_first {
+            display: inline-block;
+            font-size: 29px;
+            font-family: Roboto, Arial, sans-serif;
+            font-weight: 700;
+            color: #217f9b;
+            margin-top: 25px;
+        }
+
+        .first-div {
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            margin-right: 0;
+            position: relative;
+        }
+
+        .first-button1 {
+            width: 250px;
+            cursor: pointer;
+            height: 60px;
+            color: darkblue;
+            font-style: inherit;
+            font-size: 20px;
+            font-family: "Gill Sans Ultra Bold Condensed";
+            background-color: inherit;
+            border-radius: 25px;
+            border: solid 1.5px #064d67;
+        }
+
+        section {
+            top: 0;
+            position: relative;
+            max-width: 100%;
+            width: 100%;
+            display: block;
+            background-color: #06242d;
+        }
+
+        ul {
+            margin-bottom: 0;
+        }
+
+        .first-li {
+            display: inline-block;
+            color: white;
+            margin-right: 40px;
+            font-size: 23px;
+        }
+
+        .third-div {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 100%;
+            place-content: center;
+            place-items: center;
+
+        }
+        
+        .fa {
+            padding: 20px;
+            font-size: 26px;
+            width: 50px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        /* Add a hover effect if you want */
+        .fa:hover {
+            opacity: 0.7;
+        }
+
+        /* Set a specific color for each brand */
+
+        /* Facebook */
+        .fa-facebook {
+            background: inherit;
+            color: white;
+        }
+
+        /* Twitter */
+        .fa-twitter {
+            background: inherit;
+            color: white;
+        }
+
+        .l12 {
+            display: inline-block;
+            margin-right: 3px;
+            font-size: 23px;
+            margin-left: 20px;
+        }
+
+        .button-container {
+            display: flex;
+        }
+
+        a {
+            color: white;
+            text-decoration-line: none;
+        }
+
+        a:hover {
+            opacity: 0.7;
+        }
+
+        .first-h3 {
+            font-size: 28px;
+            width: fit-content;
+            margin:  0px 0px 0px 0px;
+            display: flex;
+            flex-shrink: 1;
+        }
+
+        .under-div-3 {
+            color: white;
+            
+        }
+
+        .third-p {
+            display: flex;
+            flex-shrink: 1;
+            font-size: 26px;
+        }
+
+        .underline-div {
+            border: solid white 2.3px;
+            min-width: 100px;
+            display: flex;
+            flex-shrink: 1;
+        }
+        .im0{
+            width: 100%;
+        }
+        @media screen and (max-width: 830px) {
+            .third-div {
+                display: grid;
+                grid-template-columns:3 200px;
+
+            }
+        }
+        
+
+        .second_h2{
+            display: flex;
+            flex-shrink: 1;
+        }
+
+        .swipe-container {
+            position: relative;
+            width: 600px;
+            height: 250px;
+            display: grid;
+            grid-template-columns: 200px 200px 200px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .swipe-content {
+            display: flex;
+            width: 300%;
+            height: 200px;
+            transition: transform 0.3s ease;
+        }
+
+        .swipe-item {
+            flex: 0 0 33.33%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            transition: opacity 0.15s;
+        }
+
+        .swipe-item:hover {
+            opacity: 0.6;
+        }
+
+        .th-div {
+           display: grid;
+           place-content: center;
+           place-items: center;
+            width: 800px;
+        }
+
+        .fth-div p {
+            width: 600px;
+            display: flex;
+            flex-shrink: 0;
+        }
+
+        .fth-div {
+            display: grid;
+            place-content: center;
+            place-items: center;
+            width: 800px;
+        }
+
+        .fth-div h2 {
+            
+            top: 140px;
+            color: white;
+            left: 220px;
+        }
+
+        .fth-div button {
+            font-size: 23px;
+            font-style: inherit;
+            font-family: sans-serif;
+            font-weight: 550;
+        }
+
+        .th-div button {
+            font-size: 23px;
+            font-style: inherit;
+            font-family: sans-serif;
+            font-weight: 550;
+            padding-bottom: 70px;
+        }
+
+        .th-image {
+            width: 100%;
+        }
+
+        .th-div h2 {
+            
+            top: 150px;
+            left: 140px;
+            color: white;
+            font-size: 29px;
+        }
+
+        .contain-all {
+            
+            width: 620px;
+            height: 230px;
+            
+        }
+
+        #swipeLeft {
+            
+            background-color: inherit;
+        }
+
+        #swipeRight {
+            background-color: inherit;
+        }
+
+        #swipeRight:hover,
+        #swipeLeft:hover {
+            background-color: white;
+        }
+
+        .button-container {
+            display: flex;
+        }
+
+        .second-button {
+            width: 300px;
+            cursor: pointer;
+            height: 60px;
+            color: white;
+            font-style: inherit;
+            font-size: 20px;
+            font-family: "Gill Sans Ultra Bold Condensed";
+            background-color: inherit;
+            border-radius: 25px;
+            border: solid 1.5px #064d67;
+        }
+
+        .button-three {
+            
+            background-color: white;
+            color: black;
+            border: 2px solid black;
+            border-radius: 5px;
+            padding-bottom: 60px;
+            padding-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .button-three:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .second-button:hover {
+            opacity: 0.6;
+        }
