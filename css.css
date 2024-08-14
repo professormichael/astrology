@@ -58,7 +58,7 @@
             
             display: grid;
             grid-template-columns: 1fr 1fr;   
-            grid-column-gap: 40px;
+            
             
             width: 100%;
             
@@ -123,18 +123,18 @@
             color: white;
             width: 100%;            
             display: inline-block;
-            padding-left: 20px;
+            
         }
 
         .third-p {
             display: flex;
             flex-shrink: 1;
-            font-size: 26px;
+            font-size: 24px;
         }
 
         .underline-div {
             border: solid white 2.3px;
-            min-width: 100px;
+            width: 200px;
             display: flex;
             flex-shrink: 1;
         }
@@ -150,6 +150,7 @@
             overflow: hidden;
             margin-bottom: 20px;
         }
+        
         @media screen and (max-width: 830px) {
             .third-div {
                 display: grid;    
@@ -173,7 +174,18 @@
         }
 
         
-        
+        .div_for_container{
+            width: 100%; 
+            display: grid;
+             place-content: center;
+              place-items: center;
+               margin-top: 30px;
+        }
+        .next_container{
+            display: grid;
+            grid-template-columns: 80px 1fr 70px; 
+            width: 100%;
+        }
         .swipe-content {
             display: flex;
             width: 300%;
@@ -207,7 +219,7 @@
             letter-spacing: 2px;
             word-spacing: 1px;
         }
-
+        
         .fth-div p {
             width: 50%;
             letter-spacing: 2px;
@@ -310,3 +322,28 @@
         .second-button:hover {
             opacity: 0.6;
         }
+        @media (max-width: 480px) {
+            section{
+                display: none;
+            }
+            .third-div {
+                display: grid;    
+                grid-template-columns:1fr ;
+                
+            }
+            .next_container{
+                display: grid;
+                grid-template-columns: 1fr; 
+                width: 100%;
+            }
+            .next_container button{
+                display: none;
+            }
+            .swipe-content {
+                display: flex;
+                width: 300%;
+                height: 200px;
+                transition: transform 0.3s ease;
+            } 
+        }        
+        

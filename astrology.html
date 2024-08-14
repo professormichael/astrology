@@ -29,7 +29,7 @@
 </head>
 <body>
     <div style="margin-left: 0;">
-        <div style="display: grid;  grid-template-columns: 1fr 1fr ;">
+        <div style="display: grid;  grid-template-columns: 1fr; width: 100%;">
             <div>
             <button style="vertical-align: top; width: 10px; height: 10px; "hidden>
             </button>
@@ -40,7 +40,7 @@
                 <span></span>
             </label>
             
-            <div class="div2" style="vertical-align: top;">
+            <div class="div2" style="vertical-align: top;" id="div2">
                 <div class="tarot-div div4">
                     <h1>Tarot</h1>
                     <a href="testing-tarot.html">Check Your Tarot</a>
@@ -55,21 +55,18 @@
                 </div>
                 <div class="zodiac-sign div4">                
                     <h1>Magical Sign</h1>
+                    <div class="newp">
                     <a href="Horoscope%20Line%202.html"> Horoscope </a>
                     <a href="Calculate-Your-Cardinal.html"> Check Your Cardinal </a>
                     <a href="angelic-path-details.html"> Check The Name Of Your Angel </a>
+                    <a href="book_reading.html"> Magical Books </a>
+                    </div>
                 </div>
                 
+                
             </div>
-    <p class="p_first" style="
-                margin:0 0 0 0 ; display:inline-block; vertical-align: top;">Angelic Powers</p>
         </div>
         
-        <div style=" margin: 0;vertical-align: top;  display: flex; justify-content: end; align-items: center;" >
-            <div class="first-div" style="display: flex; justify-content: end; align-items: center;">
-                <button onclick="window.location.href = 'book_reading.html'" class="first-button1" style="vertical-align: top" >Book Reading Now</button>
-            </div>
-        </div>
     </div>
 </div>
 <section >
@@ -112,12 +109,12 @@
         <h1 class="second-h2">CHECK YOUR HOROSCOPE</h1>
         <button class="second-button" id="second-button">Lets Begin</button>
     </div>
-    <div style="width: 100%; display: inline-block;">
-    <img class="im0" src="Untitled_design-removebg-preview.png">
+    <div style="width: 100%;" class="img_rem">
+        <img class="im0" src="Untitled_design-removebg-preview.png">
     </div>
 </div>
-<div style="width: 100%; display: grid; place-content: center; place-items: center; margin-top: 30px;">
-    <div style="display: grid; grid-template-columns: 80px 1fr 70px; width: 100%;">
+<div  class="div_for_container">
+    <div  class="next_container"> 
         <button  style="border: none "  id="swipeLeft">	<i class="fa fa-arrow-left" style="font-size:24px"></i></button>
         <div class="contain-all">    
             <div class="swipe-container">
@@ -158,10 +155,13 @@
     <button id="button-three" class="button-three " >Calculate Your Cardinal Path</button>
 </div>
 <script>
+    const div2 = document.querySelector('.div2');
+    div2.style.display = 'none';
     document.querySelector('input[type="checkbox"]').addEventListener('change', function () {
     const div2 = document.querySelector('.div2');
+
     if (this.checked) {
-      div2.style.display = 'block';
+      div2.style.display = 'grid';
 
     } else {
 

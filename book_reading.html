@@ -14,9 +14,6 @@
 
         header {
 
-            position:absolute ;
-            left: 0;
-            right: 0;
             background-color: #333;
             color: #fff;
             text-align: center;
@@ -31,21 +28,21 @@
         .book {
             display: flex;
             justify-content: start;
-            width: 700px;
-            padding: 1rem;
+            width: 100%;
+            
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
 
-        .book img {
-            max-width: 200px;
+        .book img {         
+            display: flex;
+            flex-shrink: 1;
+            width: 200px;   
             margin-right: 20px;
-
-
         }
 
         .book h3 {
-            font-size: 1.5rem;
+            font-size: 21px;
         }
 
         .book p {
@@ -58,6 +55,8 @@
             border: none;
             padding: 0.5rem 1rem;
             cursor: pointer;
+            margin-top: 4px;
+            margin-bottom: 4px;
             transition: background-color 0.3s ease;
         }
 
@@ -77,7 +76,16 @@
         .download-button:hover {
             background-color: #1e7e34; /* Hover color for Download button */
         }
-
+        @media (max-width: 480px) {
+            .book {
+                display: flex;
+                justify-content: start;
+                width: 400px;
+                padding: 1rem;
+                background-color: #fff;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            }
+    }
     </style>
 </head>
 <body>
@@ -190,6 +198,7 @@
     })
     mydownload.addEventListener('click', function (){
         const a = document.createElement('a');
+        
         a.href = 'Chi.pdf';
         a.download = 'Chi.pdf'
         a.click()
@@ -201,7 +210,7 @@
     mydownload1.addEventListener('click', function (){
         const a = document.createElement('a');
         a.href = 'documents/pdf1.pdf' || 'pdf1.pdf';
-        a.download = 'documents/pdf1.pdf' || 'pdf1.pdf'
+        a.download = 'documents/pdf1.pdf';
         a.click()
     })
     mybutton2.addEventListener('click', function (){
@@ -221,7 +230,7 @@
     mydownload3.addEventListener('click', function (){
         const a = document.createElement('a');
         a.href = 'documents/pdf3.pdf' || 'pdf3.pdf';
-        a.download = 'documents/pdf3.pdf' || 'pdf1.pdf';
+        a.download = 'documents/pdf3.pdf' || 'pdf3.pdf'
         a.click()
     })
     mybutton4.addEventListener('click', function (){
@@ -231,48 +240,50 @@
     mydownload4.addEventListener('click', function (){
         const a = document.createElement('a');
         a.href = 'documents/pdf4.pdf' || 'pdf4.pdf';
-        a.download = 'documents/pdf4.pdf' || 'pdf4.pdf';
+        a.download = 'documents/pdf4.pdf' || 'pdf4.pdf'
+        
         a.click()
     })
     mybutton5.addEventListener('click', function (){
-        localStorage.setItem('pdf', JSON.stringify('documents/pdf5.pdf' || 'pdf5.pdf'))
+        localStorage.setItem('pdf', JSON.stringify('documents/pdf6.pdf' || 'pdf6.pdf'))
         window.location.href = 'data_reading.html'
     })
     mydownload5.addEventListener('click', function (){
         const a = document.createElement('a');
-        a.href = 'documents/pdf5.pdf' || 'pdf5.pdf';
-        a.download = 'documents/pdf5.pdf' || 'pdf5.pdf';
+        a.href = 'documents/pdf6.pdf' || 'pdf2.pdf';
+        a.download = 'documents/pdf6.pdf' || 'pdf2.pdf'
+        
         a.click()
     })
     mybutton6.addEventListener('click', function (){
-        localStorage.setItem('pdf', JSON.stringify('documents/pdf6.pdf' || 'pdf6.pdf'))
+        localStorage.setItem('pdf', JSON.stringify('documents/pdf7.pdf' || 'pdf7.pdf'))
         window.location.href = 'data_reading.html'
     })
     mydownload6.addEventListener('click', function (){
         const a = document.createElement('a');
-        a.href = 'documents/pdf6.pdf' || 'pdf6.pdf';
-        a.download = 'documents/pdf6.pdf' || 'pdf6.pdf';
+        a.href = 'documents/pdf7.pdf' || 'pdf7.pdf';
+        a.download = 'documents/pdf7.pdf' || 'pdf7.pdf';
         a.click()
     })
     mybutton7.addEventListener('click', function (){
-        localStorage.setItem('pdf', JSON.stringify('documents/pdf7.pdf' || 'pdf7.pdf'))
-        window.location.href = 'data_reading.html'|| 'pdf7.pdf'
+        localStorage.setItem('pdf', JSON.stringify('documents/pdf8.pdf' || 'pdf8.pdf'))
+        window.location.href = 'data_reading.html'|| 'pdf8.pdf'
     })
     mydownload7.addEventListener('click', function (){
         const a = document.createElement('a');
-        a.href = 'documents/pdf7.pdf';
-        a.download = 'documents/pdf7.pdf'
+        a.href = 'documents/pdf8.pdf';
+        a.download = 'documents/pdf8.pdf'
         a.click()
     })
     mybutton8.addEventListener('click', function (){
-        localStorage.setItem('pdf', JSON.stringify('documents/pdf8.pdf' || 'pdf8.pdf'))
+        localStorage.setItem('pdf', JSON.stringify('documents/pdf9.pdf' || 'pdf9.pdf'))
         window.location.href = 'data_reading.html'
     })
 
     mydownload8.addEventListener('click', function (){
         const a = document.createElement('a');
-        a.href = 'documents/pdf8.pdf' || 'pdf8.pdf';
-        a.download = 'documents/pdf8.pdf' || 'pdf8.pdf'
+        a.href = 'documents/pdf9.pdf' || 'pdf9.pdf';
+        a.download = 'documents/pdf9.pdf' || 'pdf9.pdf'
         a.click()
     })
 </script>
