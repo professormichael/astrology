@@ -173,6 +173,7 @@
             choose.name = pick;
         }
     }
+    const a = document.createElement('a');
     const mybutton = document.getElementById('read-button');
     const mydownload = document.getElementById('download-button');
     const mybutton1 = document.getElementById('read-button1');
@@ -193,24 +194,22 @@
     const mydownload8 = document.getElementById('download-button8');
 
     mybutton.addEventListener('click', function (){
-        localStorage.setItem('pdf', JSON.stringify('Chi.pdf' ))
-        window.location.href = 'data_reading.html'
+        
+        a.href = 'https://drive.google.com/file/d/1ysCMrQ9p3JJeHc220iCSN4CYNZWCDghw/view?usp=drive_link';
+        a.click()
     })
     mydownload.addEventListener('click', function (){
-        const a = document.createElement('a');
         
-        a.href = 'Chi.pdf';
-        a.download = 'Chi.pdf'
+        a.href = 'https://drive.google.com/file/d/1ysCMrQ9p3JJeHc220iCSN4CYNZWCDghw/view?usp=drive_link';
         a.click()
     })
     mybutton1.addEventListener('click', function (){
-        localStorage.setItem('pdf', JSON.stringify('documents/pdf1.pdf' || 'pdf1.pdf'))
-        window.location.href = 'data_reading.html'
+        
+        a.href = 'https://drive.google.com/file/d/1-Tm2fj9qs039NmWhaI5EmhNoRFFlhvji/view?usp=drive_link';
+        a.click()
     })
     mydownload1.addEventListener('click', function (){
-        const a = document.createElement('a');
-        a.href = 'documents/pdf1.pdf' || 'pdf1.pdf';
-        a.download = 'documents/pdf1.pdf';
+        a.href = 'https://drive.google.com/file/d/1-Tm2fj9qs039NmWhaI5EmhNoRFFlhvji/view?usp=drive_link';
         a.click()
     })
     mybutton2.addEventListener('click', function (){
