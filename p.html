@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telegram Web App</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    #username {
+      font-size: 1.5em;
+      color: #0078d7;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to the Spiritual Awakening Bot</h1>
+  <p id="greeting">Hello, <span id="username">loading...</span>!</p>
+  <script>
+    // Initialize the Telegram Web App
+    const tg = window.Telegram.WebApp;
+
+    // Check if user data is available
+    if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
+      // Extract the username or use a fallback
+      const username = tg.initDataUnsafe.user.username || "Anonymous";
+      // Update the username dynamically
+      document.getElementById("username").textContent = username;
+    } else {
+      // Fallback message if user data isn't available
+      document.getElementById("username").textContent = "Guest";
+    }
+
+    // Expand the Web App
+    tg.expand();
+  </script>
+</body>
+</html>
