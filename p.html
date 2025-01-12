@@ -51,8 +51,8 @@
             width: 100%;
             justify-content: center;
             position: relative;
-            top: 100px;
-            padding: 20px;
+            top: 10px;
+            padding: 10px;
 
         }
         .card {
@@ -103,15 +103,14 @@
   <p>You have <span id="tries">...</span> tries left today.</p>
   
   <h2>
-    Welcome <p id="greeting"> <span id="username">loading...</span>!</p> To SpiritualCard Bot 
+    Welcome <p id="greeting"> <span id="username"></span>!</p> To SpiritualCard Bot 
 </h2>
-<h4>
-    Where You are Able to check your free tarot card
-</h4>
+
 <h5>
     Click The Button Below To Check On You Tarot Card
 </h5>
 <button id="play-btn" class="btn" disabled>Play Tarot</button>
+<h4 id="triesRem"></h4>
 </div>
 <h1 id="h" style="display: grid; place-content: center; place-items: center; width: 100%;">Pick Your Card</h1>
 <div class="card-container" style="display: none;" id="contain">
@@ -177,6 +176,7 @@
         playButton.disabled = false;
       } else {
         playButton.disabled = true;
+        document.getElementById("triesRem").innerText='You have used all your tries for today. Please come back tomorrow!';
         alert("You have used all your tries for today. Please come back tomorrow!");
       }
     };
@@ -188,6 +188,7 @@
         if(containStyle.display === 'none'){
             contain.style.display = 'grid';
             document.getElementById('take').style.display = 'none';
+            document.getElementById('h').style.display = 'none';
         }
         
         if (usageData[today].tries < dailyLimit) {
