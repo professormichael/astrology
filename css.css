@@ -1,349 +1,383 @@
- body {
-            background-color: #040d12;
-            margin: 0;
-        }
+body {
+    background-color: #000213;
+    margin: 0;
+    overflow-x:hidden;
+}
 
-        .p_first {
-            display: inline-block;
-            font-size: 29px;
-            font-family: Roboto, Arial, sans-serif;
-            font-weight: 700;
-            color: #217f9b;
-            margin-top: 25px;
-        }
+*{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.p_first {
+    display: inline-block;
+    font-size: 29px;
+    font-weight: 700;
+    color: #217f9b;
+    margin-top: 25px;
+}
 
-        .first-div {
-            display: flex;
-            width: 100%;
-            flex-direction: row;
-            margin-right: 0;
-            position: relative;
-        }
+.first-div {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    margin-right: 0;
+    position: relative;
+}
 
-        .first-button1 {
-            width: 250px;
-            cursor: pointer;
-            height: 60px;
-            color: darkblue;
-            font-style: inherit;
-            font-size: 20px;
-            font-family: "Gill Sans Ultra Bold Condensed";
-            background-color: inherit;
-            border-radius: 25px;
-            border: solid 1.5px #064d67;
-        }
+.first-button1 {
+    width: 250px;
+    cursor: pointer;
+    height: 60px;
+    color: darkblue;
+    font-style: inherit;
+    font-size: 20px;
+    font-family: "Gill Sans Ultra Bold Condensed";
+    background-color: inherit;
+    border-radius: 25px;
+    border: solid 1.5px #064d67;
+}
 
-        section {
-            top: 0;
-            position: relative;
-            max-width: 100%;
-            width: 100%;
-            display: block;
-            background-color: #06242d;
-        }
+/* Header CSS Style*/
+header{
+    width: 100%;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 200px 1fr 250px ;
+    place-content: center;
+    place-items: center;
+}
+.head{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+    padding-left: 10px;
+}
+.middle-header ,.right-header{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    padding-left:10px ;
+    grid-row-gap: 20px;
+}
+header a{
+    font-size: 13px;
+    text-decoration: none;
+    color: lightcyan;
+}
+header a:hover{
+    opacity: 0.6;
+}
+header h3{
+    color: rgba(0, 163, 163, 0.807);
+    font-size: 17pt;
 
-        ul {
-            margin-bottom: 0;
-        }
+}
+/* END Of Header CSS Style*/
 
-        .first-li {
-            display: inline-block;
-            color: white;
-            margin-right: 40px;
-            font-size: 23px;
-        }
+.third-div {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;       
+    width: 100%;
+ 
+    
+}
 
-        .third-div {
-            margin-top: 80px;
-            
-            display: grid;
-            grid-template-columns: 1fr 1fr;   
-            
-            
-            width: 100%;
-            
-        }
+.button-container {
+    display: flex;
+}
+
+.first-h3 {
+    font-size: 24px;
+    width: fit-content;
+    margin:  0px 0px 0px 0px;
+    display: flex;
+    flex-shrink: 1;
+}
+
+.under-div-3 {
+    color: white;
+    width: 100%;            
+
+    padding-left: 20px;
+    
+}
+
+.third-p {
+    display: flex;
+    flex-shrink: 1;
+    font-size: 14px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.underline-div {
+    border: solid white 2.3px;
+    width: 200px;
+    display: flex;
+    flex-shrink: 1;
+}
+.im0{
+    width: 100%;
+}
+.swipe-container {
+    position: relative;
+    width: 800px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 400px 400px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.second-h2{
+    display: flex;
+    flex-shrink: 1;
+    font-size: 22px;
+
+}
+
+.div_for_container{
+    width: 100%; 
+    display: grid;
+    place-content: center;
+    place-items: center;
+    margin-top: 30px;
+}
+.next_container{
+    display: grid;
+    grid-template-columns: 80px 1fr 70px; 
+    width: 100%;
+}
+.swipe-content {
+    display: flex;
+    width: 300%;
+    height: 200px;
+    transition: transform 0.3s ease;
+}
+
+.swipe-item {
+    flex: 0 0  33.33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    transition: opacity 0.15s;
+}
+
+.swipe-item:hover {
+    opacity: 0.6;
+}
+
+.th-div {
+   place-content: start;
+   place-items: start;
+   width: 800px;
+    display: grid;
+    place-content: center;
+    place-items: center;
+    width: 100%;
+    letter-spacing: 2px;
+    word-spacing: 1px;
+}
+
+.fth-div p {
+    width: 50%;
+    letter-spacing: 2px;
+    word-spacing: 1px;
+    display: flex;
+    flex-shrink: 1;
+}
+
+.fth-div {
+    display: grid;
+    place-content: center;
+    place-items: center;
+    width: 100%;
+}
+
+.fth-div h2 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 23px;
+    letter-spacing: 2px;
+    word-spacing: 1px;
+    color: white;            
+}
+/* Card Container CSS Styles*/
+.card-container{
+    background-color: #000213;
+    margin-top: 40px;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 10px;
+}
+
+.card{
+    padding-left:10px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+.card h2{
+    font-size: 14pt;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: whitesmoke;
+    
+}
+.div2{
+    background-color: white;
+    display: grid;
+    color: black;
+    border: 2px solid black;
+    padding: 10px 10px 10px 10px;
+    grid-template-columns:  1fr 1fr;
+    border-radius: 10px;
+
+}
+.div2 a{
+    display: block;
+    text-decoration: none;
+    font-size: 12;
+    color: rgb(30, 20, 22);
+    opacity: 0.8;
+
+}
+.div2 h1{
+    font-size: 15px;
+}
+.card p{
+    font-size: 10pt;
+    font-family: 'Courier New', Courier, monospace;
+    color: lightgray;
+}
+
+.th-image {
+    width: 200px;    
+}
+.button-three :hover{
+    color: aqua;
+}
+.button-three {
+   background-color:inherit;
+   color: lightgray;
+   font-family: 'Courier New', Courier, monospace;
+   border-bottom: 2px solid white;
+   border:2px solid white ;
+   border-top: none;
+   width: 150px;
+   height: 50px;
+   border-radius: 25px;
+   cursor: pointer;
+}
+
+.button-three a{
+    text-decoration: none;
+    color: lightgray;
+
+}
+/*ENDS*/
+
+.contain-all {    
+    height: 230px;
+}
+
+#swipeLeft {
+    
+    background-color: inherit;
+}
+
+#swipeRight {
+    background-color: inherit;
+}
+
+#swipeRight:hover,
+#swipeLeft:hover {
+    background-color: white;
+}
+.menu {
+  width: 28px;
+  height: 1px;
+  background-color:rgb(255, 255, 255);
+  margin: 4px 0;
+
+}
+
+.button-container {
+    display: flex;
+}
+.left-header{
+    display: none;
+    cursor: pointer;
+}
+
+.second-button {
+    width: 150px;
+    cursor: pointer;
+    height: 30px;
+    color: rgb(255, 255, 255);
+    font-style: inherit;
+    font-size: 20px;
+    font-family: "Gill Sans Ultra Bold Condensed";
+    background-color: rgb(16, 4, 49);
+    border-radius: 3px;
+    border: none;
+}
+
+.second-button:hover {
+    opacity: 0.6;
+}
+@media (max-width: 800px) {
+    .card-container{
+        background-color: #000213;
+        margin-top: 40px;
+        display: grid;
+        place-content: center;
+        place-items: center;
+        width: 100%;
+        grid-template-columns: 1fr ;
         
-        .fa {
-            padding: 20px;
-            font-size: 26px;
-            width: 50px;
-            text-align: center;
-            text-decoration: none;
-        }
+    }
 
-        /* Add a hover effect if you want */
-        .fa:hover {
-            opacity: 0.7;
-        }
+    .img_rem, .im0{
+        display: none;
+    }
+    .card{
+        justify-content: center;
+        align-items: center;
+        width: 100%;
 
-        /* Set a specific color for each brand */
+    }
+    .card p{
+        width: 300px;
+    }
+    .left-header{
+        display: grid;
+        place-content: center;
+        place-items: center;
+        width: 100%;
+        margin-left: 10px;  
+    }
+    .third-div {
+        display: grid;    
+        grid-template-columns:1fr;
+    }
+    header{
+        display: none;
+    }
+    .menu{
+        display: grid;
+    }
+    .diving{
+        display: grid;
+        width: 100%;    
+        place-content: center;
+        place-items: center;
+    }
 
-        /* Facebook */
-        .fa-facebook {
-            background: inherit;
-            color: white;
-        }
-
-        /* Twitter */
-        .fa-twitter {
-            background: inherit;
-            color: white;
-        }
-
-        .l12 {
-            display: inline-block;
-            margin-right: 3px;
-            font-size: 23px;
-            margin-left: 20px;
-        }
-
-        .button-container {
-            display: flex;
-        }
-
-        a {
-            color: white;
-            text-decoration-line: none;
-        }
-
-        a:hover {
-            opacity: 0.7;
-        }
-
-        .first-h3 {
-            font-size: 28px;
-            width: fit-content;
-            margin:  0px 0px 0px 0px;
-            display: flex;
-            flex-shrink: 1;
-        }
-
-        .under-div-3 {
-            color: white;
-            width: 100%;            
-            display: inline-block;
-            
-        }
-
-        .third-p {
-            display: flex;
-            flex-shrink: 1;
-            font-size: 24px;
-        }
-
-        .underline-div {
-            border: solid white 2.3px;
-            width: 200px;
-            display: flex;
-            flex-shrink: 1;
-        }
-        .im0{
-            width: 100%;
-        }
-        .swipe-container {
-            position: relative;
-            width: 800px;
-            height: 100%;
-            display: grid;
-            grid-template-columns: 400px 400px ;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-        
-        @media screen and (max-width: 830px) {
-            .third-div {
-                display: grid;    
-                grid-template-columns:1fr 1fr;
-                grid-column-gap: 100px;
-            }
-            .swipe-container{
-                width: 400px;
-                
-                display: grid;
-                grid-template-columns: 400px ;
-                overflow: hidden;
-                margin-bottom: 20px;
-            }
-        }
-        
-
-        .second_h2{
-            display: flex;
-            flex-shrink: 1;
-        }
-
-        
-        .div_for_container{
-            width: 100%; 
-            display: grid;
-             place-content: center;
-              place-items: center;
-               margin-top: 30px;
-        }
-        .next_container{
-            display: grid;
-            grid-template-columns: 80px 1fr 70px; 
-            width: 100%;
-        }
-        .swipe-content {
-            display: flex;
-            width: 300%;
-            height: 200px;
-            transition: transform 0.3s ease;
-        }
-
-        .swipe-item {
-            flex: 0 0 33.33%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 20px;
-            transition: opacity 0.15s;
-        }
-
-        .swipe-item:hover {
-            opacity: 0.6;
-        }
-
-        .th-div {
-           /*display: grid;
-           place-content: start;
-           place-items: start;
-            width: 800px;*/
-            display: grid;
-            place-content: center;
-            place-items: center;
-            width: 100%;
-            letter-spacing: 2px;
-            word-spacing: 1px;
-        }
-        
-        .fth-div p {
-            width: 50%;
-            letter-spacing: 2px;
-            word-spacing: 1px;
-            display: flex;
-            flex-shrink: 1;
-        }
-
-        .fth-div {
-            display: grid;
-            place-content: center;
-            place-items: center;
-            width: 100%;
-        }
-
-        .fth-div h2 {
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            font-size: 23px;
-            letter-spacing: 2px;
-            word-spacing: 1px;
-            color: white;            
-        }
-
-        
-
-        .th-image {
-            width: 100%;
-        }
-
-        .th-div h2 {
-            width: fit-content;
-            color: white;
-            font-size: 25px;
-            
-        }
-        .th-div p{
-            width: fit-content;
-        }
-        .contain-all {
-            
-            
-            height: 230px;
-            
-        }
-
-        #swipeLeft {
-            
-            background-color: inherit;
-        }
-
-        #swipeRight {
-            background-color: inherit;
-        }
-
-        #swipeRight:hover,
-        #swipeLeft:hover {
-            background-color: white;
-        }
-
-        .button-container {
-            display: flex;
-        }
-
-        .second-button {
-            width: 300px;
-            cursor: pointer;
-            height: 60px;
-            color: white;
-            font-style: inherit;
-            font-size: 20px;
-            font-family: "Gill Sans Ultra Bold Condensed";
-            background-color: inherit;
-            border-radius: 30px;
-            border: solid 2px #064d67;
-        }
-
-        .button-three {
-            background-color: white;
-            color: black;
-            border: 2px solid black;
-            border-radius: 40px;
-            backdrop-filter: blur(-20px);
-            background-image: url('Ae6H.gif');
-            height: 80px;
-            vertical-align: top;
-            display: grid;
-            place-content: center;
-            place-items: center;
-            text-align: center;
-            background-blend-mode:difference;
-            width: 300px;
-            font-size: 22px;
-            font-weight: 500;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        
-
-        .second-button:hover {
-            opacity: 0.6;
-        }
-        @media (max-width: 480px) {
-            section{
-                display: none;
-            }
-            .third-div {
-                display: grid;    
-                grid-template-columns:1fr ;
-                
-            }
-            .next_container{
-                display: grid;
-                grid-template-columns: 1fr; 
-                width: 100%;
-            }
-            .next_container button{
-                display: none;
-            }
-            .swipe-content {
-                display: flex;
-                width: 300%;
-                height: 200px;
-                transition: transform 0.3s ease;
-            } 
-        }        
-        
+}        

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link  rel="stylesheet" href="css.css">
-    <link rel="stylesheet" href="astrology1.css" type="text/css">
 
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
@@ -24,97 +23,136 @@
     
 </head>
 <body>
-    
-    <div style="margin-left: 0;">
-        <div style="display: grid;  grid-template-columns: 1fr; width: 100%;">
-            <div>
-            <button style="vertical-align: top; width: 10px; height: 10px; "hidden>
-            </button>
-            <label for="check">
-                <input type="checkbox" id="check"/>
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-            
-            <div class="div2" style="vertical-align: top;" id="div2">
-                <div class="tarot-div div4">
-                    <h1>Tarot</h1>
-                    <a href="testing-tarot.html">Check Your Tarot</a>
-                </div>
-                <div class="fun-div div4">
-                    <h1>Fun-Astrology</h1>
-                    <a href="cookies.html"> Cookie Break</a>
-                </div>
-                <div class="zodiac-sign div4">
-                    <h1>Zodiac Sign</h1>
-                    <a href="Horoscope%20New%20Line.html"> Horoscope </a>
-                </div>
-                <div class="zodiac-sign div4">                
-                    <h1>Magical Sign</h1>
-                    <div class="newp">
+<header>
+    <div class="head">
+        <h3><strong>A</strong>wakening <strong>H</strong>ome</h3>
+       
+    </div>
+    <div class="middle-header">            
+        <a href="astrology.html">Home</a>
+        <a href="testing-tarot.html">Tarot Reading</a>
+        <a href="cookies.html">Guessing Cookie</a>
+        
+    </div>
+    <div class="right-header">
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-instagram" style="color: white; margin-right: 10px"></a>
+        <a href="#" class="fa fa-youtube" style="color: white"></a>
+    </div> 
+</header>
+
+<div class="left-header">            
+    <div class="menu"></div>
+    <div class="menu"></div>
+    <div class="menu"></div>
+</div>
+<div style="margin-left: 0;">
+    <div style="display: grid;  grid-template-columns: 1fr; width: 100%;">
+        <div class="div2" style="vertical-align: top;" id="div2">
+            <div class="tarot-div div4">
+                <h1>Tarot</h1>
+                <a href="testing-tarot.html">Check Your Tarot</a>
+            </div>
+            <div class="fun-div div4">
+                <h1>Fun-Astrology</h1>
+                <a href="cookies.html"> Cookie Break</a>
+            </div>
+            <div class="zodiac-sign div4">
+                <h1>Zodiac Sign</h1>
+                <a href="Horoscope%20New%20Line.html"> Horoscope </a>
+            </div>
+            <div class="zodiac-sign div4">                
+                <h1>Magical Sign</h1>
+                <div class="newp">
                     <a href="Horoscope%20Line%202.html"> Horoscope </a>
                     <a href="Calculate-Your-Cardinal.html"> Check Your Cardinal </a>
                     <a href="angelic-path-details.html"> Check The Name Of Your Angel </a>
                     <a href="book_reading.html"> Magical Books </a>
-                    </div>
                 </div>
-                
-                
             </div>
         </div>
-        
     </div>
 </div>
-<section >
-
-    <nav>
-        <ul>
-            <li class="first-li"><a href="astrology.html">
-                Home</a>
-            </li>
-            <li class="first-li"><a href="testing-tarot.html">
-                Tarot Reading</a>
-            </li>
-            <li class="first-li"><a href="cookies.html">
-                Guessing Cookie </a>
-            </li>
-            <li class="l12">
-                <a href="#" class="fa fa-facebook"></a>
-
-            </li>
-            <li class="l12">
-             <a href="#" class="fa fa-instagram" style="color: white; margin-right: 10px"></a>
-            </li>
-            <li class="l12">
-             <a href="#" class="fa fa-youtube" style="color: white"></a>
-            </li>
-        </ul>
-    </nav>
-
-</section>
-<img src="Dark%20Blue%20Simple%20Dark%20Tech%20and%20Gaming%20Bio-Link%20Website.png" style="width: 100%;">
 <div class="third-div">
     <div class="under-div-3">
-        <h3  class="first-h3">
-            Astrology Sign
-        </h3>
-        <p class="third-p">
-            Free Site To Check Your Zodiac Sign, Astrology Sign And Numerology Chart
-        </p>
-        <div class="underline-div"></div>
-        <h1 class="second-h2">CHECK YOUR HOROSCOPE</h1>
-        <button class="second-button" id="second-button">Lets Begin</button>
+        <div class="diving">
+            <h3  class="first-h3">
+                Astrology Sign
+            </h3>
+            <p class="third-p">
+                Free Site To Check Your Zodiac Sign, Astrology Sign And Numerology Chart
+            </p>
+            <h1 class="second-h2" style="color:antiquewhite; font-size: 14px; padding-left: 20px;">CHECK YOUR HOROSCOPE</h1>
+            
+        </div>
+        <button class="second-button" id="second-button" style="margin-top: 20px; font-size: 14px; padding-left: 20px;">Lets Begin</button>
+
     </div>
-    <div style="width: 100%;" class="img_rem">
+    <div style="width: 100%;" class="img_rem" >
         <img class="im0" src="Untitled_design-removebg-preview.png">
     </div>
 </div>
+<script>
+        let i = 0;
+        const writer = ['Astrology Sign', 'Free Site To Check Your Zodiac Sign, Astrology Sign And Numerology Chart', 'CHECK YOUR HOROSCOPE'];
+        const firstH3 = document.querySelector('.first-h3');
+        const thirdP = document.querySelector('.third-p');
+        const underline = document.querySelector('.underline-div')
+        const secondH2 = document.querySelector('.second-h2');
+        const secondButton = document.querySelector('.second-button');
+        let w = '';
+        let x = '';
+        let y = '';
+        let j = 0;
+        let k = 0;
+        underline.style.display = 'None';
+        secondH2.style.display = 'None';
+        secondButton.style.display = 'None';
+        firstH3.style.display = 'None';
+        thirdP.style.display = 'None';
+        
+        function learnF() {
+            if (i < writer[0].length) {
+                firstH3.style.display = 'grid';
+                w += writer[0][i];
+                firstH3.innerText = w;
+                i++;
+            } 
+            else {
+                if (j < writer[1].length) {
+                    thirdP.style.display='grid';
+                    x += writer[1][j];
+                    thirdP.innerText = x;
+                    j++;
+                }
+                else{
+                    if (k < writer[2].length) {
+                        secondH2.style.display='grid';
+                        y += writer[2][k];
+                        secondH2.innerText = y;
+                        k++;
+                    }
+                    else{
+                        underline.style.display = 'grid';
+                        secondH2.style.display = 'grid';
+                        secondButton.style.display = 'inline-block';
+
+                    }
+                    
+                }
+                // stop when done
+            }
+        }
+
+        const typing = setInterval(learnF, 100);
+
+  </script>
+
 <div  class="div_for_container">
     <div  class="next_container"> 
         <button  style="border: none "  id="swipeLeft">	<i class="fa fa-arrow-left" style="font-size:24px"></i></button>
-        <div class="contain-all">    
-            <div class="swipe-container">
+        <div class="contain-all"> <h2 style="font-size: 15px; color: white; width: 100%; display: grid; place-content: center;">Zodiac Signs</h2>
+            <div class="swipe-container"> 
                 <div class="swipe-content">
                     <div id="img1" class="swipe-item"><img src="Untitled_design__10_-removebg-preview.png" style="width: 100%"><p style="display: block;position: absolute; top:180px;color: white; font-size: 23px; ">Aries</p></div>
                     <div id="img2" class="swipe-item"><img src="Untitled_design__13_-removebg-preview.png" style="width: 100%"><p style="display: block;position: absolute; top:180px;color: white; font-size: 23px; ">Taurus</p></div>
@@ -133,51 +171,63 @@
         </div>
         <button style="border: none "  id="swipeRight"><i class="fa fa-arrow-right" style="font-size:24px"></i></button>
     </div>
-    <p style="width: 100%"><p style="color: white; font-size: 23px; ">Click Your Future Now</p>
-</div>
-<div  class="th-div">
-    <h2 class="th-h2">
-        Angelic Calculator, Calculate Your Angel
-    </h2>
-    <p style=" font-size:27px;color: white;outline-color: black">Know Who Your Angel Is Now By Clicking The Button Below</p>
-    <img style=" width: 300px;" src="1692360072263-removebg-preview.png" class="th-image">
-    <button id="three" class="button-three" >Check The Name Of Your Angel</button>
-</div>
-<div class="fth-div" >
-    <h2 >
-        Calculate Your Cardinal Path
-    </h2>
-    <img style=" width: 300px;" src="1692360120302-removebg-preview.png" class="th-image">
-    <p style=" font-size:24px;color: white;outline-color: black">Calculate Your Cardinal Sign By Clicking The Button Below,<br/> What Is A Cardinal Sign?<br/> A Cardinal Sign Is A Reading Of The Phase Of The Moon Depending On When You Are Born Read More About This By Clicking The Button</p>
-    <button id="button-three" class="button-three " >Calculate Your Cardinal Path</button>
+    <p style="width: 100%"><p style="color: white; font-size: 14px; ">Click Your Future Now</p>
 </div>
 
+<div class="card-container">
+
+    <div class="card">
+        <img  src="astroImage.png" class="th-image" >    
+        <div>
+        <h2 class="th-h2">
+           Tarot Reading
+        </h2>
+        <p > Get Your Readings Now</p>            
+      <button class="button-three"><a href="testing-tarot.html">Learn More</a></button>
+        </div>
+    
+    </div>
+    <div class="card">
+        <img  src="1692360072263-removebg-preview.png" class="th-image">    
+        <div>
+        <h2 class="th-h2">Angelic Calculator</h2>
+        <p >Know Who Your Angel Is Now By Clicking The Button Below</p>            
+        <button class="button-three" ><a href="'Calculate-Your-Cardinal.html'">Learn More </a></button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="1692360120302-removebg-preview.png" class="th-image">
+        <div>
+        <h2 >Calculate Your Cardinal Path</h2>
+        <p>Calculate Your Cardinal Sign By Clicking The Button Below</p>
+        <button class="button-three" ><a href="Calculate-Your-Cardinal.html">Learn More </a></button>    
+        </div>
+    </div>
+</div>
 <script crossorigin="anonymous">
     const div2 = document.querySelector('.div2');
     div2.style.display = 'none';
-    document.querySelector('input[type="checkbox"]').addEventListener('change', function () {
-    const div2 = document.querySelector('.div2');
+    let value = 0
+    document.querySelector('.left-header').addEventListener('click', function () {
+        const div2 = document.querySelector('.div2');
 
-    if (this.checked) {
-      div2.style.display = 'grid';
+        if (value === 0) {
+            value = 1
+            div2.style.display = 'grid';
 
-    } else {
-
-         div2.style.display = 'none';
-    }
+        } 
+        else {
+            value = 0
+            div2.style.display = 'none';
+        }
 });
     const second_button = document.getElementById('second-button');
     second_button.addEventListener('click', function (){
         window.location.href = 'Horoscope New Line.html'
 
     })
-    document.getElementById('button-three').addEventListener('click', function (){
-        window.location.href = 'Calculate-Your-Cardinal.html'
-    })
-    document.getElementById('three').addEventListener('click', function (){
-        window.location.href = 'angelic-path-details.html'
-    })
-        const swipeContainer = document.querySelector('.swipe-container');
+
+    const swipeContainer = document.querySelector('.swipe-container');
     const swipeContent = document.querySelector('.swipe-content');
     const swipeItems = document.querySelectorAll('.swipe-item');
 
@@ -883,9 +933,6 @@ localStorage.setItem('story1', JSON.stringify(src1('Taurus').story))
 
 </script>
 
-<script >
-    	
-</script>
 </body>
 
 </html>
