@@ -1,0 +1,640 @@
+<!-- PRIME MODEL CODE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Lunar Element Calculator - Discover Your Birth Moon Element</title>
+    <meta name="title" content="Lunar Element Calculator - Discover Your Birth Moon Element">
+    <meta name="description" content="Calculate your personal elemental affinity based on the moon phase at your exact time of birth. Discover if you're Earth, Air, Fire, or Water element.">
+    <meta name="keywords" content="moon phase calculator, birth element, lunar astrology, moon sign, elemental affinity, astrology calculator">
+    <meta name="author" content="Your Name">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://example.com/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://example.com/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://example.com/favicon/favicon-16x16.png">
+    <link rel="manifest" href="https://example.com/favicon/site.webmanifest">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/lunar-element-calculator/">
+    <meta property="og:title" content="Lunar Element Calculator - Discover Your Birth Moon Element">
+    <meta property="og:description" content="Calculate your personal elemental affinity based on the moon phase at your exact time of birth.">
+    <meta property="og:image" content="https://example.com/images/lunar-calculator-preview.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://example.com/lunar-element-calculator/">
+    <meta property="twitter:title" content="Lunar Element Calculator - Discover Your Birth Moon Element">
+    <meta property="twitter:description" content="Calculate your personal elemental affinity based on the moon phase at your exact time of birth.">
+    <meta property="twitter:image" content="https://example.com/images/lunar-calculator-preview.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://example.com/lunar-element-calculator/">
+    
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Lunar Element Calculator",
+      "description": "Calculate your elemental affinity based on your birth moon phase",
+      "url": "https://example.com/lunar-element-calculator/",
+      "applicationCategory": "AstrologyTool",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    
+    <style>
+        :root {
+            --earth: #8B4513;
+            --air: #6495ED;
+            --fire: #FF4500;
+            --water: #4169E1;
+            --dark-bg: #0f2027;
+            --darker-bg: #0a161a;
+            --text-light: #f8f8f8;
+            --text-lighter: #ffffff;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg), #203a43, #2c5364);
+            color: var(--text-light);
+            min-height: 100vh;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(5px);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-lighter);
+            font-size: 2.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            text-align: center;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .form-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .form-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-lighter);
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(100, 149, 237, 0.5);
+            background-color: white;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-top: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .result {
+            margin-top: 2rem;
+            padding: 2rem;
+            border-radius: 12px;
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .earth { border-left: 5px solid var(--earth); }
+        .air { border-left: 5px solid var(--air); }
+        .fire { border-left: 5px solid var(--fire); }
+        .water { border-left: 5px solid var(--water); }
+        
+        .element-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .element-icon {
+            font-size: 3.5rem;
+            margin-right: 1.5rem;
+        }
+        
+        .element-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .moon-phase {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        
+        .element-description {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .traits-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+        }
+        
+        .trait {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .earth .trait { background-color: rgba(139, 69, 19, 0.3); }
+        .air .trait { background-color: rgba(100, 149, 237, 0.3); }
+        .fire .trait { background-color: rgba(255, 69, 0, 0.3); }
+        .water .trait { background-color: rgba(65, 105, 225, 0.3); }
+        
+        .section-title {
+            font-size: 1.3rem;
+            margin: 1.5rem 0 1rem;
+            color: var(--text-lighter);
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 70%;
+            width: 4px;
+            border-radius: 2px;
+        }
+        
+        .earth .section-title::before { background-color: var(--earth); }
+        .air .section-title::before { background-color: var(--air); }
+        .fire .section-title::before { background-color: var(--fire); }
+        .water .section-title::before { background-color: var(--water); }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid var(--text-lighter);
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .error {
+            color: #ff6b6b;
+            text-align: center;
+            margin: 1rem 0;
+            display: none;
+        }
+        
+        .credits {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        .moon-visual {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 1rem auto;
+            background: #333;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+        
+        .moon-light {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #f5f3ce;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lunar Element Calculator</h1>
+        <p class="subtitle">Discover your elemental affinity based on the moon's phase at your birth</p>
+        
+        <div class="form-container">
+            <div class="form-group">
+                <label for="birthdate">Birth Date</label>
+                <input type="date" id="birthdate" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="birthtime">Birth Time</label>
+                <input type="time" id="birthtime" required value="12:00">
+            </div>
+            
+            <div class="form-group">
+                <label for="timezone">Timezone Offset</label>
+                <select id="timezone" required>
+                    <option value="-12">UTC-12:00</option>
+                    <option value="-11">UTC-11:00</option>
+                    <option value="-10">UTC-10:00</option>
+                    <option value="-9">UTC-09:00</option>
+                    <option value="-8">UTC-08:00</option>
+                    <option value="-7">UTC-07:00</option>
+                    <option value="-6">UTC-06:00</option>
+                    <option value="-5">UTC-05:00</option>
+                    <option value="-4">UTC-04:00</option>
+                    <option value="-3">UTC-03:00</option>
+                    <option value="-2">UTC-02:00</option>
+                    <option value="-1">UTC-01:00</option>
+                    <option value="0" selected>UTC±00:00</option>
+                    <option value="1">UTC+01:00</option>
+                    <option value="2">UTC+02:00</option>
+                    <option value="3">UTC+03:00</option>
+                    <option value="4">UTC+04:00</option>
+                    <option value="5">UTC+05:00</option>
+                    <option value="6">UTC+06:00</option>
+                    <option value="7">UTC+07:00</option>
+                    <option value="8">UTC+08:00</option>
+                    <option value="9">UTC+09:00</option>
+                    <option value="10">UTC+10:00</option>
+                    <option value="11">UTC+11:00</option>
+                    <option value="12">UTC+12:00</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="longitude">Longitude (optional for precision)</label>
+                <input type="number" id="longitude" placeholder="e.g., -74.0060" step="0.0001" min="-180" max="180">
+            </div>
+        </div>
+        
+        <button id="calculate">Calculate My Element</button>
+        
+        <div class="loading">
+            <div class="spinner"></div>
+            <p>Consulting the cosmos...</p>
+        </div>
+        
+        <div class="error" id="error"></div>
+        
+        <div id="result" class="result">
+            <div class="element-header">
+                <div>
+                    <div class="element-icon" id="element-icon">🌑</div>
+                    <div class="moon-visual" id="moon-visual">
+                        <div class="moon-light" id="moon-light"></div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="element-title" id="element-name">Element</h2>
+                    <p class="moon-phase" id="moon-phase">Moon Phase</p>
+                    <p id="illumination"></p>
+                    <p id="moon-age"></p>
+                </div>
+            </div>
+            
+            <p class="element-description" id="element-description"></p>
+            
+            <h3 class="section-title">Key Traits</h3>
+            <div class="traits-container" id="traits"></div>
+            
+            <h3 class="section-title">Personality Profile</h3>
+            <p id="personality-traits"></p>
+            
+            <h3 class="section-title">Life Guidance</h3>
+            <p id="life-guidance"></p>
+        </div>
+        
+        <div class="credits">
+            <p>Calculations based on astronomical moon phase algorithms</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set default date to today
+            document.getElementById('birthdate').valueAsDate = new Date();
+            
+            // Element mapping based on moon phase
+            const ELEMENTS = {
+                new: { 
+                    name: 'Earth', 
+                    icon: '🌑', 
+                    description: "Your birth during the New Moon phase grounds you with practicality and stability.", 
+                    traits: ["Grounded", "Reliable", "Patient", "Practical", "Sensible"], 
+                    personality: "You have a strong connection to the material world and a practical approach to life. You're likely dependable and good at manifesting your goals in tangible ways. New Moon individuals often excel at bringing ideas into reality.", 
+                    guidance: "Focus on building solid foundations. Your strength lies in your ability to bring abstract concepts into physical reality. Plant seeds for your future during each new moon cycle.",
+                    style: "background: #333; box-shadow: inset 0 0 10px rgba(0,0,0,0.5);"
+                },
+                waxing_crescent: { 
+                    name: 'Earth', 
+                    icon: '🌒', 
+                    description: "Born under the Waxing Crescent, you're building energy and potential.", 
+                    traits: ["Determined", "Builder", "Focused", "Resourceful", "Persistent"], 
+                    personality: "You have a natural talent for starting projects and gathering resources. Your growth-oriented mindset helps you overcome initial obstacles. Waxing Crescent individuals often see potential where others don't.", 
+                    guidance: "This is your time to gather resources and make plans. Trust in gradual progress and the power of small, consistent steps toward your goals.",
+                    style: "clip-path: polygon(0 0, 55% 0, 55% 100%, 0% 100%); transform: translateX(-10%);"
+                },
+                first_quarter: { 
+                    name: 'Fire', 
+                    icon: '🌓', 
+                    description: "Your First Quarter Moon birth ignites action and decision-making.", 
+                    traits: ["Energetic", "Courageous", "Dynamic", "Assertive", "Pioneering"], 
+                    personality: "You're a natural initiator who thrives on challenge. Your courage to take action sets you apart. First Quarter Moon individuals often make excellent leaders who aren't afraid of obstacles.", 
+                    guidance: "When facing challenges, trust your ability to take decisive action. Your energy is at its peak for overcoming obstacles and pushing forward.",
+                    style: "clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);"
+                },
+                waxing_gibbous: { 
+                    name: 'Fire', 
+                    icon: '🌔', 
+                    description: "Born under the Waxing Gibbous, you have refining and perfecting energy.", 
+                    traits: ["Detail-oriented", "Perfectionist", "Analytical", "Dedicated", "Passionate"], 
+                    personality: "You excel at refining ideas and processes. Your attention to detail and commitment to excellence are remarkable. Waxing Gibbous individuals often make great editors, engineers, and craftspeople.", 
+                    guidance: "Use your refining energy to perfect your skills and projects. Your power lies in making good things truly excellent.",
+                    style: "clip-path: polygon(0 0, 75% 0, 75% 100%, 0% 100%); transform: translateX(-15%);"
+                },
+                full: { 
+                    name: 'Air', 
+                    icon: '🌕', 
+                    description: "Your Full Moon birth illuminates your intellectual and communicative nature.", 
+                    traits: ["Intellectual", "Communicative", "Social", "Expressive", "Visionary"], 
+                    personality: "You thrive on ideas, communication, and social connections. Your mind is your greatest asset. Full Moon individuals often have a gift for seeing multiple perspectives and synthesizing information.", 
+                    guidance: "Share your knowledge and insights with others. Your path involves spreading ideas and connecting people through communication.",
+                    style: "clip-path: circle(50% at 50% 50%);"
+                },
+                waning_gibbous: { 
+                    name: 'Air', 
+                    icon: '🌖', 
+                    description: "Born under the Waning Gibbous, you have a gift for analysis and teaching.", 
+                    traits: ["Analytical", "Wise", "Teacher", "Reflective", "Objective"], 
+                    personality: "You process experiences deeply and can extract wisdom from them. Your ability to analyze and teach is exceptional. Waning Gibbous individuals often make excellent mentors and researchers.", 
+                    guidance: "Take time to reflect on your experiences and share what you've learned. Your insights can help others on their paths.",
+                    style: "clip-path: polygon(25% 0, 100% 0, 100% 100%, 25% 100%); transform: translateX(15%);"
+                },
+                last_quarter: { 
+                    name: 'Water', 
+                    icon: '🌗', 
+                    description: "Your Last Quarter Moon birth gives you deep emotional intelligence.", 
+                    traits: ["Intuitive", "Emotional", "Compassionate", "Insightful", "Healing"], 
+                    personality: "You're deeply in tune with emotions - yours and others'. Your intuition is strong and reliable. Last Quarter Moon individuals often have natural healing abilities and emotional wisdom.", 
+                    guidance: "Trust your gut feelings and emotional intelligence. Your ability to process and release is key to your growth.",
+                    style: "clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);"
+                },
+                waning_crescent: { 
+                    name: 'Water', 
+                    icon: '🌘', 
+                    description: "Born under the Waning Crescent, you're deeply intuitive and spiritual.", 
+                    traits: ["Dreamy", "Imaginative", "Psychic", "Mystical", "Creative"], 
+                    personality: "You have a strong connection to the unseen realms and your subconscious mind. Your dreams and intuition are powerful guides. Waning Crescent individuals often have prophetic dreams and artistic talents.", 
+                    guidance: "Pay attention to your dreams and inner voice. Rest and reflection are essential for your wellbeing and creativity.",
+                    style: "clip-path: polygon(45% 0, 100% 0, 100% 100%, 45% 100%); transform: translateX(10%);"
+                }
+            };
+            
+            document.getElementById('calculate').addEventListener('click', calculateElement);
+            
+            async function calculateElement() {
+                const birthdate = document.getElementById('birthdate').value;
+                const birthtime = document.getElementById('birthtime').value;
+                const timezoneOffset = document.getElementById('timezone').value;
+                const longitude = document.getElementById('longitude').value;
+                
+                if (!birthdate || !birthtime) {
+                    showError('Please fill in all required fields');
+                    return;
+                }
+                
+                // Show loading, hide other elements
+                document.querySelector('.loading').style.display = 'block';
+                document.getElementById('error').style.display = 'none';
+                document.getElementById('result').style.display = 'none';
+                
+                try {
+                    // Combine date and time
+                    const datetime = `${birthdate}T${birthtime}`;
+                    const birthDateTime = new Date(datetime);
+                    
+                    // Adjust for timezone (simple approach - for precise calculations you'd need more complex timezone handling)
+                    const timezoneOffsetHours = parseInt(timezoneOffset);
+                    birthDateTime.setHours(birthDateTime.getHours() - timezoneOffsetHours);
+                    
+                    // Get moon phase data
+                    const moonData = calculateMoonPhase(birthDateTime, longitude);
+                    
+                    // Determine element based on moon phase
+                    const phaseKey = moonData.phaseName.toLowerCase().replace(' ', '_');
+                    const elementData = ELEMENTS[phaseKey] || ELEMENTS.new;
+                    
+                    // Display results
+                    displayResults(elementData, moonData);
+                    
+                } catch (error) {
+                    console.error('Error:', error);
+                    showError('Failed to calculate element. Please check your inputs and try again.');
+                } finally {
+                    document.querySelector('.loading').style.display = 'none';
+                }
+            }
+            
+            function calculateMoonPhase(date, longitude) {
+                // Based on astronomical algorithms for moon phase calculation
+                // Simplified version that doesn't require exact location (longitude can improve precision)
+                
+                // Julian Date calculation
+                const year = date.getFullYear();
+                const month = date.getMonth() + 1;
+                const day = date.getDate();
+                const hours = date.getHours() + date.getMinutes() / 60;
+                
+                // Calculate Julian Date (simplified)
+                let a = Math.floor((14 - month) / 12);
+                let y = year + 4800 - a;
+                let m = month + 12 * a - 3;
+                let jd = day + Math.floor((153 * m + 2) / 5) + 365 * y + Math.floor(y / 4) - Math.floor(y / 100) + Math.floor(y / 400) - 32045;
+                jd += (hours - 12) / 24;
+                
+                // Calculate days since known new moon (Jan 6, 2000 18:14 UTC)
+                const knownNewMoonJD = 2451549.25972;
+                let daysSinceKnown = jd - knownNewMoonJD;
+                
+                // Moon synodic period (29.530588 days)
+                const synodicMonth = 29.530588;
+                
+                // Calculate moon age in days
+                let moonAge = daysSinceKnown % synodicMonth;
+                if (moonAge < 0) moonAge += synodicMonth;
+                
+                // Calculate illumination percentage
+                let phaseAngle = moonAge / synodicMonth * 360;
+                let illumination = 0.5 * (1 - Math.cos(phaseAngle * Math.PI / 180));
+                
+                // Determine phase name
+                let phaseName;
+                if (moonAge < 1) phaseName = "New Moon";
+                else if (moonAge < 6.4) phaseName = "Waxing Crescent";
+                else if (moonAge < 8.4) phaseName = "First Quarter";
+                else if (moonAge < 13.8) phaseName = "Waxing Gibbous";
+                else if (moonAge < 15.8) phaseName = "Full Moon";
+                else if (moonAge < 21.1) phaseName = "Waning Gibbous";
+                else if (moonAge < 23.1) phaseName = "Last Quarter";
+                else if (moonAge < 28.5) phaseName = "Waning Crescent";
+                else phaseName = "New Moon";
+                
+                // Adjust for longitude if provided (simple correction)
+                if (longitude) {
+                    const longitudeCorrection = (longitude / 360) * synodicMonth;
+                    moonAge = (moonAge + longitudeCorrection) % synodicMonth;
+                }
+                
+                return {
+                    phaseName: phaseName,
+                    illumination: illumination,
+                    moonAge: moonAge,
+                    phaseAngle: phaseAngle,
+                    daysInCycle: synodicMonth
+                };
+            }
+            
+            function displayResults(elementData, moonData) {
+                const resultElement = document.getElementById('result');
+                
+                // Set element class for styling
+                resultElement.className = 'result ' + elementData.name.toLowerCase();
+                
+                // Populate data
+                document.getElementById('element-icon').textContent = elementData.icon;
+                document.getElementById('element-name').textContent = elementData.name;
+                document.getElementById('moon-phase').textContent = moonData.phaseName;
+                document.getElementById('illumination').textContent = `Illumination: ${Math.round(moonData.illumination * 100)}%`;
+                document.getElementById('moon-age').textContent = `Moon Age: ${moonData.moonAge.toFixed(2)} days`;
+                document.getElementById('element-description').textContent = elementData.description;
+                document.getElementById('personality-traits').textContent = elementData.personality;
+                document.getElementById('life-guidance').textContent = elementData.guidance;
+                
+                // Update moon visualization
+                const moonLight = document.getElementById('moon-light');
+                moonLight.style = elementData.style || '';
+                
+                // Populate traits
+                const traitsContainer = document.getElementById('traits');
+                traitsContainer.innerHTML = '';
+                elementData.traits.forEach(trait => {
+                    const traitElement = document.createElement('div');
+                    traitElement.className = 'trait';
+                    traitElement.textContent = trait;
+                    traitsContainer.appendChild(traitElement);
+                });
+                
+                // Show results
+                resultElement.style.display = 'block';
+            }
+            
+            function showError(message) {
+                const errorElement = document.getElementById('error');
+                errorElement.textContent = message;
+                errorElement.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
